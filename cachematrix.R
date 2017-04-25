@@ -25,22 +25,22 @@
 ##  [2,]  1.5 -0.5
 
 
-## Usage : makeCacheMatrix (ma) where ma = an invertible matrix
+## Usage : makeCacheMatrix (x) where x = an invertible matrix
 ## Return : list of 4 functions
 
 ## Build a list of 4 functions : set/get/setResult/getResult
-## set : save the input matrix (ma) into memory 
-## get : retrieve de input matrix (ma) from memory
-## setResult : put the result (inverse of ma) into memory 
-## getResult : retrieve the result from memory 
+## set : save the input matrix (x) into environment different from the current environment 
+## get : retrieve de input matrix (x) from different from the current environment
+## setResult : put the result (inverse of x) into different from the current environment 
+## getResult : retrieve the result from different from the current environment 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
-  ## save the input matrix into memory
+  ## save the input matrix into the environment different from the current environment
   set <- function(y) {
     x <<- y
     m <<- NULL
   }
-  ## retrieve the input matrix fom memory
+  ## retrieve the input matrix from the environment different from the current environment
   get <- function() x
   
   ## save the result into memory
